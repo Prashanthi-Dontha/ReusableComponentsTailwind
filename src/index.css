@@ -5,3 +5,21 @@
 .font-[poppins] {
   font-family: poppins;
 }
+
+.social-dividers {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #b6bece;
+  line-height: 0.1em;
+  margin: -20px 0 20px;
+}
+
+.social-dividers span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+.form-input {
+  padding: 15px 5px 15px 45px !important;
+}
