@@ -66,16 +66,16 @@ function Login() {
 
           <div className="social-media flex lg:w-[60vh] md:w-80 w-56 justify-evenly">
             <a href="https://gmail.com">
-              <FaGoogle className="w-8 h-8 text-center" />
+              <FaGoogle className="w-6 h-6 md:w-8 md:h-8 text-center" />
             </a>
             <a href="https://facebook.com">
-              <FaFacebook className="w-8 h-8 text-center" />
+              <FaFacebook className="w-6 h-6 md:w-8 md:h-8 text-center" />
             </a>
             <a href="https://github.com">
-              <FaGithub className="w-8 h-8 text-center" />
+              <FaGithub className="w-6 h-6 md:w-8 md:h-8 text-center" />
             </a>
             <a href="https://linkedin.com">
-              <FaLinkedin className="w-8 h-8 text-center" />
+              <FaLinkedin className="w-6 h-6 md:w-8 md:h-8 text-center" />
             </a>
           </div>
         </div>

@@ -10,12 +10,14 @@ import Brands from "./Components/Brands";
 import Home from "./Components/Home";
 import Create from "./Components/Create";
 import Login from "./Components/Login";
+import Footer from "./Components/Footer";
+import Main from "./Main";
 
 function App() {
   return (
     <div className="h-screen bg-gradient-to-t from-teal-300 to-pink-300 font-['Poppins']">
       <Routes>
-        <Route path="/" element={<Header />} />
+        <Route path="/" element={<Main />} />
         <Route path="home" element={<Home />} />
         <Route path="contact" element={<Contact />} />
         <Route path="blog" element={<Blog />} />
@@ -24,7 +26,9 @@ function App() {
         <Route path="brands" element={<Brands />} />
         <Route path="create" element={<Create />} />
         <Route path="login" element={<Login />} />
+        {/* <Route path="/" element={<Footer />} /> */}
       </Routes>
+      {/* <Footer /> */}
       {/* <Header /> */}
     </div>
   );

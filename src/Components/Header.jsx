@@ -137,7 +137,7 @@ function Header() {
             </button>
           </Link>
 
-          <button className="md:hidden" onClick={onMenuToggle}>
+          <button className="lg:hidden" onClick={onMenuToggle}>
             {isMenu ? (
               <FaWindowClose className="text-2xl" />
             ) : (
