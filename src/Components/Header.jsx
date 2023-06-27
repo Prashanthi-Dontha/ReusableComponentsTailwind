@@ -50,7 +50,7 @@ function Header() {
                 Explore {isExploreDropDown ? <FaAngleUp /> : <FaAngleDown />}
               </button>
               {isExploreDropDown && (
-                <div className="dropdownItems md:absolute bg-gray-50 p-2 rounded-md my-2">
+                <div className="dropdownItems md:absolute bg-gray-50 p-2 rounded-md my-2 shadow-md z-10">
                   <ul className="space-y-2 w-40">
                     <li>
                       <Link
@@ -93,7 +93,7 @@ function Header() {
                 Blog{isBlogDropDown ? <FaAngleUp /> : <FaAngleDown />}
               </button>
               {isBlogDropDown && (
-                <div className="dropdownItems md:absolute bg-gray-50 p-2 rounded-md my-2">
+                <div className="dropdownItems md:absolute bg-gray-50 p-2 rounded-md my-2 shadow-md z-10">
                   <ul className="space-y-2 w-40">
                     <li>
                       <Link
@@ -137,7 +137,7 @@ function Header() {
             </button>
           </Link>
 
-          <button className="lg:hidden" onClick={onMenuToggle}>
+          <button className="md:hidden" onClick={onMenuToggle}>
             {isMenu ? (
               <FaWindowClose className="text-2xl" />
             ) : (

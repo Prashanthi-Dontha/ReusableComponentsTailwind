@@ -11,9 +11,8 @@ import {
 function Footer() {
   const year = new Date().getFullYear();
   const [email, setEmail] = useState("");
-  console.log(year);
   return (
-    <div className="bg-gray-50 h-fit">
+    <div className="bg-gray-50 h-fit ">
       <div className=" md:grid md:grid-rows-6 md:grid-cols-1 md:px-16 md:items-center md:justify-items-center md:shadow-md hidden ">
         <div className=" row-span-5 grid grid-cols-4 gap-x-4">
           <div>
@@ -104,17 +103,15 @@ function Footer() {
           </p>
         </div>
       </div>
-      <div className="lg:hidden md:hidden divide-y-2">
+      <div className="lg:hidden md:hidden ">
         <div className=" flex flex-col justify-center items-center gap-y-3 py-4">
           <Link to="contact">Page Name</Link>
           <Link to="contact">Market Place</Link>
           <Link to="contact">Company</Link>
           <Link to="contact">Join Newsletter</Link>
         </div>
-        <div className=" text-center ">
-          <p className=" p-5 text-gray-500 text-sm w-[100%]">
-            Copyright © {year}
-          </p>
+        <div className=" text-center border-t-2 w-[100%]">
+          <p className=" p-5 text-gray-500 text-sm ">Copyright © {year}</p>
         </div>
       </div>
     </div>
