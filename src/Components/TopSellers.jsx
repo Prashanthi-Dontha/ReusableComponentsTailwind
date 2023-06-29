@@ -71,10 +71,10 @@ function TopSellers() {
     setViewAll(!viewAll);
   };
   return (
-    <div className="flex flex-col px-6 md:px-16 py-10">
+    <div className="flex flex-col px-6 md:px-16 py-10  dark:bg-slate-600">
       <div className="flex justify-between flex-row items-center ">
         <div>
-          <h1 className=" text-sm md:text-xl lg:text-2xl font-semibold md:font-normal">
+          <h1 className=" text-sm md:text-xl lg:text-2xl font-semibold md:font-normal dark:text-white">
             Our top Sellers
           </h1>
         </div>

@@ -11,8 +11,12 @@ export const resource = createContext(null);
 
 function Main() {
   const [topsel, setTopSel] = useState(topsellers);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
+  );
+  console.log(theme);
   return (
-    <resource.Provider value={{ topsel }}>
+    <resource.Provider value={{ topsel, theme, setTheme }}>
       <Header />
       <TopSellers />
       <ScalingCards />

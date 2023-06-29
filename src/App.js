@@ -13,7 +13,7 @@ import Main from "./Main";
 
 function App() {
   return (
-    <div className="h-full bg-gradient-to-t from-teal-300 to-pink-300 font-['Poppins']">
+    <div className="h-full bg-gradient-to-t from-teal-300 to-pink-300 font-['Poppins'] dark:bg-black">
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="home" element={<Home />} />
