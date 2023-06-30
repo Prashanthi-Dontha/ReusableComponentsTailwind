@@ -116,7 +116,7 @@ function Header() {
                 Explore {isExploreDropDown ? <FaAngleUp /> : <FaAngleDown />}
               </button>
               {isExploreDropDown && (
-                <div className="dropdownItems md:absolute bg-gray-50 dark:bg-slate-700 p-2 rounded-md mt-5 shadow-md z-10">
+                <div className="dropdownItems md:absolute bg-gray-50 dark:bg-slate-500 p-2 rounded-md mt-5 shadow-md z-10">
                   <ul className="space-y-2 w-40">
                     <li>
                       <Link
@@ -159,7 +159,7 @@ function Header() {
                 Blog{isBlogDropDown ? <FaAngleUp /> : <FaAngleDown />}
               </button>
               {isBlogDropDown && (
-                <div className="dropdownItems md:absolute bg-gray-50 dark:bg-slate-700 p-2  rounded-md my-2 shadow-md z-10">
+                <div className="dropdownItems md:absolute bg-gray-50 dark:bg-slate-500 p-2  rounded-md my-2 shadow-md z-10">
                   <ul className="space-y-2 w-40">
                     <li>
                       <Link
