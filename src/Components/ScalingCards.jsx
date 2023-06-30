@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { resource } from "../Main";
 function ScalingCards() {
-  const { theme } = useContext(resource);
+  // const { theme } = useContext(resource);
   return (
     <div className="flex flex-col justify-center items-center px-6 md:px-16 dark:bg-slate-600">
       <div className="lg:text-2xl text-sm font-semibold md:font-normal md:text-xl md:w-[400px] text-center  dark:text-white">

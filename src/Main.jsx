@@ -11,10 +11,14 @@ export const resource = createContext(null);
 
 function Main() {
   const [topsel, setTopSel] = useState(topsellers);
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
-  );
+  // const [theme, setTheme] = useState(
+  //   localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
+  // );
+  const getCurrentTheme = () =>
+    window.matchMedia("(prefers-color-scheme:dark)").matches;
+  const [theme, setTheme] = useState(getCurrentTheme());
   console.log(theme);
+  // console.log(theme);
   return (
     <resource.Provider value={{ topsel, theme, setTheme }}>
       <Header />

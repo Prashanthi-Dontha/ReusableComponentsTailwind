@@ -48,7 +48,7 @@ function TopSellers() {
       window.removeEventListener("resize", handleResize);
     };
   }, [displayCards, viewAll, styleWidth]);
-  console.log(pageWidth, displayCards, styleWidth);
+  // console.log(pageWidth, displayCards, styleWidth);
 
   const btnLeft = () => {
     if (viewAll) {

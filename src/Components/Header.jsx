@@ -17,67 +17,59 @@ function Header() {
   const [isExploreDropDown, setIsExploreDropDown] = useState(false);
   const [isBlogDropDown, setIsBlogDropDown] = useState(false);
   const [isTheme, setIsTheme] = useState(false);
-  // useEffect(() => {
-  //   if (
-  //     localStorage.theme === "dark" ||
-  //     (!("theme" in localStorage) &&
-  //       window.matchMedia("(prefers-color-scheme: dark)").matches)
-  //   ) {
-  //     setTheme("dark");
-  //   } else {
-  //     setTheme("light");
-  //   }
-  //   setSysTheme(theme);
-  // }, []);
+  const darkQuery = window.matchMedia("(prefers-color-scheme:dark)");
 
-  /* useEffect(() => {
-    if (theme === "dark") {
+  //as window refreshes it will check for the local storage and assign the color
+  useEffect(() => {
+    onWindowMatch();
+  }, [theme]);
+
+  const onWindowMatch = () => {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && darkQuery.matches)
+    ) {
       document.documentElement.classList.add("dark");
+      console.log("window called1");
     } else {
       document.documentElement.classList.remove("dark");
+      console.log("window called2");
     }
-  }, [theme]);*/
+  };
+
+  // on button click we are setting the theme a//c to the theme this will get executes
   useEffect(() => {
     switch (theme) {
       case "dark":
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
+        console.log("effect 1 called1");
         break;
       case "light":
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
+        console.log("effect 1 called2");
         break;
       default:
         localStorage.removeItem("theme");
-        onWindowMatch();
+        console.log("effect 1 called3");
+
         break;
     }
   }, [theme]);
-  const onWindowMatch = () => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
 
-  onWindowMatch();
-
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-      if (!("theme" in localStorage)) {
-        if (e.matches) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
+  // changes the color of the screen on dynamically changing the theme of the browser
+  darkQuery.addEventListener("change", (e) => {
+    if (!("theme" in localStorage)) {
+      if (e.matches) {
+        document.documentElement.classList.add("dark");
+        console.log("function called1");
+      } else {
+        document.documentElement.classList.remove("dark");
+        console.log("funtion called2");
       }
-    });
+    }
+  });
   function onMenuToggle() {
     setIsMenu(!isMenu);
     setIsBlogDropDown(false);
@@ -96,20 +88,8 @@ function Header() {
   }
   const themeToggled = () => {
     setIsTheme(!isTheme);
-    console.log(isTheme);
   };
-  const selectThemeLight = () => {
-    setTheme("light");
-    setIsTheme(false);
-  };
-  const selectThemeDark = () => {
-    setTheme("dark");
-    setIsTheme(false);
-  };
-  const selectThemeSystem = () => {
-    // setTheme(sysTheme);
-    setIsTheme(false);
-  };
+
   return (
     <div className="bg-white dark:bg-slate-700">
       <nav className="flex items-center justify-between mx-auto w-[92%] py-2">
@@ -230,21 +210,31 @@ function Header() {
                 <div className="absolute dropdownItems bg-gray-50 p-2 rounded-md my-2 shadow-md z-10 w-32 left-0 mt-5">
                   <li
                     className="hover:bg-gray-300 rounded-md px-2 py-1 flex items-center justify-start cursor-pointer"
-                    onClick={selectThemeLight}
+                    onClick={() => {
+                      setTheme("light");
+                      setIsTheme(false);
+                    }}
                   >
                     {<FaSun />}
                     <p className="ml-3 theme-color">Light</p>
                   </li>
                   <li
                     className="hover:bg-gray-300 rounded-md px-2 py-1 flex items-center justify-start cursor-pointer"
-                    onClick={selectThemeDark}
+                    onClick={() => {
+                      setTheme("dark");
+                      setIsTheme(false);
+                    }}
                   >
                     {<FaMoon />}
                     <p className="ml-3 theme-color"> Dark</p>
                   </li>
                   <li
                     className="hover:bg-gray-300 rounded-md px-2 py-1 flex items-center justify-start cursor-pointer"
-                    onClick={selectThemeSystem}
+                    onClick={() => {
+                      setTheme("system");
+                      setIsTheme(false);
+                      // onWindowMatch();
+                    }}
                   >
                     <FaLaptop />
                     <p className="ml-3 theme-color">System</p>
@@ -277,9 +267,9 @@ function Header() {
 
             <button className="md:hidden z-10" onClick={onMenuToggle}>
               {isMenu ? (
-                <FaWindowClose className="text-2xl" />
+                <FaWindowClose className="text-2xl  dark:text-white" />
               ) : (
-                <FaBars className="text-2xl" />
+                <FaBars className="text-2xl dark:text-white" />
               )}
             </button>
           </div>
